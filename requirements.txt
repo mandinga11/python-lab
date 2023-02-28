@@ -1,0 +1,10 @@
+click
+colorama
+Flask
+itsdangerous
+Jinja2
+MarkupSafe
+mysqlclient
+peewee
+python-decouple
+Werkzeug
