@@ -1,39 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <title>Page title</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <script src="js/main.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIKU STORE - Competencia Mobile Games</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Iconos (opcional, ejemplo con Font Awesome) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Reemplaza con tu kit si usas FA -->
 </head>
-<body class="antialiased bg-body text-body font-body">
-    <div class="">
-     
+<body>
 
-    <section class="relative pb-20">
-        <nav class="flex justify-between items-center py-8 px-4 xl:px-10">
-            <ul class="hidden lg:flex lg:ml-auto lg:mr-12 lg:items-center lg:w-auto lg:space-x-12">
-                <li><a class="text-sm font-medium" href="#">Login</a></li>
-            </ul>
-            <div class="hidden lg:block">
-                <a class="inline-block py-3 px-8 text-sm leading-normal font-medium bg-red-50 hover:bg-red-100 text-red-500 rounded transition duration-200" href="/register">Register</a>
-            </div>
-        </nav>
-        <div class="relative container pt-12 px-4 mx-auto text-center">
-            <span class="text-blue-400 font-semibold">Bootcamp Backend con Python</span>
-            <h2 class="mt-8 mb-8 lg:mb-12 text-4xl lg:text-6xl font-semibold">Mi PyTienda en línea. 🐍</h2>
-            <p class="max-w-3xl mx-auto mb-8 lg:mb-12 text-xl text-gray-500">
-                Páginas web desarrollada con Flask, Peewee y Python.    
-            </p>
-            <a class="inline-block w-full md:w-auto mb-2 md:mb-0 px-8 py-4 mr-4 text-sm font-medium leading-normal bg-red-400 hover:bg-red-300 text-white rounded transition duration-200" href="/register">
-                Comienza ahora
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                MIKU<span class="neon-pink">STORE</span>
             </a>
+            <nav class="main-nav">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+                    ☰
+                </button>
+                <ul id="nav-menu">
+                    <li><a href="#about">Qué es</a></li>
+                    <li><a href="#games">Juegos</a></li>
+                    <li><a href="#prizes">Premios</a></li>
+                    <li><a href="#rules">Reglas</a></li>
+                    <li><a href="#register" class="cta-button-nav">¡Regístrate!</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
-    </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1 class="neon-cyan">CONECTA. COMPITE. CONQUISTA.</h1>
+                <p class="subtitle">La tienda definitiva de mobile gaming ya esta aquí.</p>
+                <h2>MIKU STORE <span class="year">'25</span></h2>
+                <p>Demuestra tu habilidad y domina los juegos más impactantes del momento.</p>
+                <a href="#register" class="cta-button hero-cta">¡ÚNETE A LA BATALLA!</a>
+            </div>
+            <div class="hero-overlay"></div>
+            <!-- Puedes añadir una imagen de fondo cyberpunk aquí en el CSS -->
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="container">
+                <h2 class="section-title neon-yellow">// QUÉ ES CYBER CLASH //</h2>
+                <div class="section-content grid-2">
+                    <div>
+                        <p>Cyber Clash es la principal competencia de eSports para juegos móviles, ambientada en un futuro cyberpunk vibrante y peligroso. Reunimos a los mejores jugadores para luchar por la gloria, premios increíbles y el título de Campeón de la Red.</p>
+                        <p>Prepárate para partidas intensas, estrategias audaces y momentos inolvidables. ¿Tienes lo necesario para hackear tu camino a la cima?</p>
+                    </div>
+                    <div>
+                        <!-- Podrías poner una imagen o un gráfico aquí -->
+                        <img src="https://cdna.artstation.com/p/assets/images/images/010/411/796/large/callum-clark-screen-2560x1440-2018-04-21-00-10-19.jpg?1524270697"
+                        alt="Ilustración Cyberpunk Arena" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="content-section dark-bg">
+            <div class="container">
+                <h2 class="section-title neon-pink">// JUEGOS DESTACADOS //</h2>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <img src="https://img.freepik.com/premium-photo/sci-fi-virtual-reality-landscape-cyberpunk-style-3d-render-fantasy-universe-space-cloud-background_24623-1166.jpg" 
+                        alt="BB vs BC" class="game-img">
+                        <h3>Big Bang vs Big Crunch</h3>
+                        <p>Que fue primero, la particula o las galaxias?</p>
+                    </div>
+                    <div class="game-card">
+                        <img src="https://s0.smartresize.com/wallpaper/283/707/HD-wallpaper-porsche-x-cyberpunk-2077-cyberpunk-2077-2021-games-games-artist-artwork-digital-art-artstation.jpg" 
+                        alt="Red Viper" class="game-img">
+                        <h3>Red Viper</h3>
+                        <p>Esquiva todo a gran velocidad!</p>
+                    </div>
+                    <div class="game-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk4DXTAZ7ITI0-q6mQhc_wW0VBuWroRg52pQ&s" alt="Pack-Woman" class="game-img">
+                        <h3>Pack-Woman </h3>
+                        <p>Revive este sexy juego de los 80's.</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <!-- Prizes Section -->
+        <section id="prizes" class="content-section">
+            <div class="container">
+                <h2 class="section-title neon-cyan">// PREMIOS DE PELICULA //</h2>
+                <div class="section-content">
+                    <p>Compite por un pozo de premios cargado de tecnología punta y créditos digitales:</p>
+                    <ul>
+                        <li><span class="neon-pink">1er Lugar:</span> Smartphone Gamer de Última Generación + 10 USD + Trofeo Cyber Clash </li>
+                        <li><span class="neon-cyan">2do Lugar:</span> Tablet Gamer + 5 USD </li>
+                        <li><span class="neon-yellow">3er Lugar:</span> Auriculares VR + 2,50 USD </li>
+                        <li><span class="neon-white">Top 8:</span> Merchandising exclusivo Cyber Clash</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section -->
+        <section id="rules" class="content-section dark-bg">
+            <div class="container">
+                <h2 class="section-title neon-yellow">// REGLAS DE COMBATE //</h2>
+                 <div class="section-content">
+                    <ol>
+                        <li>Registro abierto hasta Navidad.</li>
+                        <li>Debes tener al menos 10 años para participar.</li>
+                        <li>Juego limpio obligatorio. Cualquier hackeo o trampa resultará en descalificación inmediata.</li>
+                        <li>Los participantes deben usar sus propios dispositivos móviles.</li>
+                        <li>Formatos del torneo: Eliminación directa y Fases de grupo.</li>
+                        <li>Consulta el <a href="#" class="neon-link">reglamento completo</a> para detalles específicos de cada juego.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="content-section cta-section">
+            <div class="container">
+                <h2 class="section-title neon-pink">// ENLISTATE AHORA //</h2>
+                <p>El futuro es ahora. La gloria te espera. ¿Aceptarás el desafío?</p>
+                <form action="#" method="POST" class="register-form">
+                    <input type="text" name="nickname" placeholder="Tu Nickname de Jugador" required>
+                    <input type="email" name="email" placeholder="Tu Email de Contacto" required>
+                    <select name="game" required>
+                        <option value="" disabled selected>Selecciona tu juego principal</option>
+                        <option value="neon-racers">Neon Racers</option>
+                        <option value="data-heist">Data Heist Shooter</option>
+                        <option value="circuit-brawlers">Circuit Brawlers</option>
+                    </select>
+                    <button type="submit" class="cta-button">ENVIAR TRANSMISIÓN (Registrarme)</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Cyber Clash Industries. Todos los derechos reservados.</p>
+            <p>Conéctate:
+                <a href="/register.html" class="social-link">[Twi]</a>
+                <a href="#" class="social-link">[Dis]</a>
+                <a href="#" class="social-link">[Ins]</a>
+            </p>
+            <!-- Añade enlaces a Política de Privacidad / Términos -->
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-

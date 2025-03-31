@@ -1,0 +1,471 @@
+/* --- Reseteo Básico y Variables --- */
+:root {
+    --dark-bg: #0a0a1a; /* Azul muy oscuro casi negro */
+    --dark-bg-secondary: #1a1a2e; /* Azul oscuro */
+    --primary-font: 'Orbitron', sans-serif; /* Fuente tech/display */
+    --secondary-font: 'Rajdhani', sans-serif; /* Fuente más legible */
+    --text-color: #e0e0e0; /* Blanco grisáceo */
+    --neon-pink: #ff00ff;
+    --neon-cyan: #00ffff;
+    --neon-yellow: #ffff00;
+    --neon-green: #00ff00;
+    --glow-intensity: 5px;
+    --glow-intensity-strong: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--secondary-font);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* --- Contenedor y Utilidades --- */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Efectos Neón --- */
+.neon-pink { color: var(--neon-pink); text-shadow: 0 0 var(--glow-intensity) var(--neon-pink), 0 0 var(--glow-intensity-strong) var(--neon-pink); }
+.neon-cyan { color: var(--neon-cyan); text-shadow: 0 0 var(--glow-intensity) var(--neon-cyan), 0 0 var(--glow-intensity-strong) var(--neon-cyan); }
+.neon-yellow { color: var(--neon-yellow); text-shadow: 0 0 var(--glow-intensity) var(--neon-yellow), 0 0 var(--glow-intensity-strong) var(--neon-yellow); }
+.neon-green { color: var(--neon-green); text-shadow: 0 0 var(--glow-intensity) var(--neon-green), 0 0 var(--glow-intensity-strong) var(--neon-green); }
+.neon-white { color: #fff; text-shadow: 0 0 var(--glow-intensity) #fff, 0 0 var(--glow-intensity-strong) #ccc; }
+
+.neon-link {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.neon-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--neon-cyan), 0 0 15px var(--neon-cyan);
+}
+
+/* --- Cabecera y Navegación --- */
+.main-header {
+    background-color: rgba(10, 10, 26, 0.8); /* Fondo oscuro semi-transparente */
+    border-bottom: 1px solid var(--neon-cyan);
+    box-shadow: 0 2px 15px rgba(0, 255, 255, 0.2);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Efecto cristal esmerilado */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--primary-font);
+    font-size: 1.8em;
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-size: 1em;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active { /* Para marcar la sección activa (requiere JS) */
+    color: var(--neon-pink);
+    border-bottom-color: var(--neon-pink);
+    text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.cta-button-nav {
+    background-color: var(--neon-pink);
+    color: var(--dark-bg);
+    padding: 8px 15px !important; /* Overwrite padding */
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid var(--neon-pink);
+    box-shadow: 0 0 8px var(--neon-pink);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.cta-button-nav:hover {
+    background-color: transparent;
+    color: var(--neon-pink) !important; /* Overwrite color */
+    box-shadow: 0 0 15px var(--neon-pink);
+    transform: scale(1.05);
+    border-bottom-color: transparent !important; /* Remove hover border */
+}
+
+.menu-toggle {
+    display: none; /* Oculto en escritorio */
+    background: none;
+    border: none;
+    color: var(--neon-cyan);
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero {
+    /* Reemplaza 'cyberpunk_bg.jpg' con tu imagen */
+    background: url('https://images.unsplash.com/photo-1511556532299-8967196e50f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3liZXJwdW5rfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60') no-repeat center center/cover;
+    height: 85vh; /* Altura relativa a la ventana */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    padding-top: 60px; /* Espacio para el header fijo */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(10, 10, 26, 0.7), rgba(10, 10, 26, 0.9)); /* Gradiente oscuro */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: var(--primary-font);
+    font-size: 3.5em; /* Tamaño grande */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.hero .subtitle {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: var(--neon-yellow);
+    font-weight: 600;
+}
+
+.hero h2 {
+    font-family: var(--primary-font);
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--neon-pink);
+}
+
+.hero .year {
+    font-size: 0.8em;
+    vertical-align: super;
+    color: var(--neon-cyan);
+}
+
+.hero p {
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--neon-cyan);
+    color: var(--dark-bg);
+    padding: 15px 30px;
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 10px var(--neon-cyan), inset 0 0 5px rgba(255,255,255,0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--neon-cyan);
+    box-shadow: 0 0 20px var(--neon-cyan);
+    transform: translateY(-3px);
+}
+
+/* --- Secciones de Contenido --- */
+.content-section {
+    padding: 60px 0;
+}
+
+.dark-bg {
+    background-color: var(--dark-bg-secondary);
+    border-top: 1px solid var(--neon-pink);
+    border-bottom: 1px solid var(--neon-pink);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.1);
+}
+
+.section-title {
+    font-family: var(--primary-font);
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "//";
+    color: rgba(224, 224, 224, 0.5); /* Color de texto semi-transparente */
+    margin: 0 10px;
+}
+
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left; /* Ajusta según necesidad */
+}
+
+.section-content p,
+.section-content li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.section-content ul, .section-content ol {
+    margin-left: 30px;
+    list-style: none; /* Remove default */
+    padding-left: 0;
+}
+
+.section-content li::before { /* Custom list bullets */
+    content: '>';
+    color: var(--neon-cyan);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.2em;
+    margin-right: 0.2em;
+}
+#rules ol li::before { content: counter(list-item) '. '; color: var(--neon-yellow); margin-left: -1.5em; margin-right: 0.5em; }
+#rules ol { counter-reset: list-item; }
+
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+/* --- Games Section --- */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.game-card {
+    background-color: rgba(26, 26, 46, 0.7); /* dark-bg-secondary con transparencia */
+    border: 1px solid var(--neon-cyan);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+.game-img {
+    width: 100%;
+    height: 180px; /* Ajusta según necesites */
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--neon-cyan);
+}
+
+.game-card h3 {
+    font-family: var(--primary-font);
+    color: var(--neon-yellow);
+    margin: 15px 0 10px;
+    font-size: 1.4em;
+}
+
+.game-card p {
+    padding: 0 15px 15px;
+    font-size: 0.95em;
+    color: var(--text-color);
+}
+
+/* --- Registration Section --- */
+.cta-section {
+    background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(10, 10, 26, 0.9)), url('https://images.unsplash.com/photo-1531297484001-80022131c5a9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaG5vbG9neSUyMGRhcmsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60') no-repeat center center/cover;
+    text-align: center;
+}
+
+.register-form {
+    max-width: 500px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.register-form input,
+.register-form select {
+    padding: 12px 15px;
+    background-color: rgba(26, 26, 46, 0.8); /* dark-bg-secondary con transparencia */
+    border: 1px solid var(--neon-cyan);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-family: var(--secondary-font);
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.register-form input::placeholder,
+.register-form select {
+    color: rgba(224, 224, 224, 0.6);
+}
+
+.register-form input:focus,
+.register-form select:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 8px var(--neon-pink);
+}
+
+.register-form select option {
+    background-color: var(--dark-bg-secondary);
+    color: var(--text-color);
+}
+
+.register-form button {
+    margin-top: 10px; /* Espacio antes del botón */
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #05050d; /* Aún más oscuro */
+    color: #aaa;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--neon-cyan);
+    font-size: 0.9em;
+}
+
+.main-footer p {
+    margin-bottom: 10px;
+}
+
+.social-link {
+    color: var(--neon-pink);
+    text-decoration: none;
+    margin: 0 8px;
+    font-family: var(--primary-font);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.social-link:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--neon-pink);
+}
+
+/* --- Responsive Design --- */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 992px) {
+    .hero h1 { font-size: 3em; }
+    .hero h2 { font-size: 2em; }
+    .grid-2 { grid-template-columns: 1fr; text-align: center; }
+    .grid-2 img { margin: 20px auto 0; } /* Centrar imagen en mobile */
+    .section-content { padding: 0 15px; }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    .main-nav ul {
+        display: none; /* Ocultar menú normal */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 10, 26, 0.95); /* Fondo sólido para menú desplegado */
+        border-top: 1px solid var(--neon-cyan);
+        padding: 10px 0;
+    }
+
+    .main-nav ul.active {
+        display: flex; /* Mostrar cuando está activo */
+    }
+
+    .main-nav li {
+        margin: 10px 0;
+        text-align: center;
+        margin-left: 0; /* Reset margin */
+    }
+
+     .main-nav a {
+        display: block; /* Ocupar todo el ancho */
+        padding: 10px;
+     }
+
+    .cta-button-nav { /* Estilo diferente para el botón en menú móvil */
+       display: block;
+       margin: 15px auto;
+       width: fit-content;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar botón hamburguesa */
+    }
+
+    .hero { height: auto; min-height: 70vh; padding: 80px 20px 40px; } /* Ajustar padding y altura */
+    .hero h1 { font-size: 2.5em; }
+    .hero h2 { font-size: 1.8em; }
+    .hero p { font-size: 1em; }
+
+    .section-title { font-size: 1.8em; }
+    .games-grid { grid-template-columns: 1fr; } /* Una columna en móviles */
+}
